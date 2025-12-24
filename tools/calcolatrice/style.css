@@ -1,6 +1,7 @@
+/* Sfondo pagina distinto dalla calcolatrice */
 body {
     font-family: Arial, sans-serif;
-    background: radial-gradient(circle at top, #3b3f4c, #181a20);
+    background: linear-gradient(135deg, #10131a, #1b2230);
     margin: 0;
     padding: 0;
     color: #f5f5f5;
@@ -21,34 +22,56 @@ body {
     color: #d0d0d0;
 }
 
+/* Wrapper centrato e con respiro */
 .calculator-wrapper {
     display: flex;
     justify-content: center;
     padding: 20px 10px 40px;
 }
 
+/* Corpo calcolatrice: più compatta, più device-like */
 .calculator {
-    background: #2a2d36;
-    border-radius: 20px;
+    background: #2b2f3a;
+    border-radius: 24px;
     padding: 18px 18px 22px;
     width: 100%;
-    max-width: 380px;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+    max-width: 340px; /* più stretta per entrare meglio su desktop */
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.7),
+        0 0 0 2px rgba(255, 255, 255, 0.03);
     border: 1px solid #3b3f4c;
+    position: relative;
 }
 
+/* Effetto “tacca” superiore tipo dispositivo */
+.calculator::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 6px;
+    border-radius: 10px;
+    background: #181a20;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+
+/* Barra superiore con brand e modalità */
 .top-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px;
-    font-size: 0.85rem;
+    margin: 14px 4px 8px;
+    font-size: 0.8rem;
     color: #b0b0b0;
 }
 
 .brand {
     font-weight: bold;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
 }
 
 .mode {
@@ -57,6 +80,7 @@ body {
     background: #3b3f4c;
 }
 
+/* Display: più realistico, leggermente incassato */
 #display {
     width: 100%;
     height: 70px;
@@ -65,10 +89,12 @@ body {
     padding: 10px;
     margin-bottom: 15px;
     border: none;
-    border-radius: 12px;
-    background: #15171d;
-    color: #f5f5f5;
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.7);
+    border-radius: 14px;
+    background: #111318;
+    color: #e9f0ff;
+    box-shadow:
+        inset 0 0 8px rgba(0, 0, 0, 0.9),
+        0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 /* Griglia scientifica */
@@ -86,23 +112,29 @@ body {
     gap: 8px;
 }
 
+/* Pulsanti: stile tasti fisici */
 .btn {
     padding: 12px;
     font-size: 1rem;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: 0.15s;
+    transition: 0.12s;
     background: #3b3f4c;
     color: #f5f5f5;
-    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.5);
+    box-shadow:
+        0 3px 0 rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(255, 255, 255, 0.02);
 }
 
 .btn:active {
     transform: translateY(1px);
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+    box-shadow:
+        0 1px 0 rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(255, 255, 255, 0.02);
 }
 
+/* Operatori */
 .operator {
     background: #ff9f43;
     color: #1b1b1b;
@@ -112,6 +144,7 @@ body {
     background: #ffb25f;
 }
 
+/* Funzioni */
 .function {
     background: #57606f;
 }
@@ -120,6 +153,7 @@ body {
     background: #747d8c;
 }
 
+/* Tasti scientifici */
 .sci {
     background: #3742fa;
 }
@@ -128,6 +162,7 @@ body {
     background: #535eff;
 }
 
+/* Uguale: tasto grande */
 .equal {
     grid-column: span 4;
     background: #2ed573;
@@ -139,6 +174,7 @@ body {
     background: #3ae27f;
 }
 
+/* Footer */
 .footer {
     text-align: center;
     color: #d0d0d0;
@@ -161,19 +197,18 @@ body {
     color: #b0b0b0;
 }
 
-/* Mobile first: già ottimizzato.
-   Miglioriamo un po' per schermi più grandi */
+/* Desktop: un po' più respiro ma sempre contenuta */
 @media (min-width: 768px) {
     .calculator-wrapper {
         padding-top: 30px;
     }
 
     .calculator {
-        max-width: 420px;
+        max-width: 360px;
     }
 
     #display {
         height: 80px;
-        font-size: 2.2rem;
+        font-size: 2.1rem;
     }
 }
