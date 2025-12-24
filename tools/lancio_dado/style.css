@@ -25,13 +25,13 @@ body {
 }
 
 .dice-box {
-  background: #f0f2f5;
+  background: #f7f8fa;
   padding: 30px 20px;
   border-radius: 18px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   max-width: 300px;
   width: 100%;
-  border: 1px solid #d6d8dd;
+  border: 1px solid #dcdfe3;
 }
 
 .dice {
