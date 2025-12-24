@@ -7,17 +7,18 @@ const equalBtn = document.getElementById("equal");
 const percentBtn = document.getElementById("percent");
 const invertBtn = document.getElementById("invert");
 const degRadBtn = document.getElementById("degRad");
+const modeLabel = document.getElementById("modeLabel");
 
 let isDeg = true;
 
-// Inserimento valori normali
+// Inserimento valori normali (click)
 buttons.forEach(btn => {
     btn.addEventListener("click", () => {
         display.value += btn.getAttribute("data-value");
     });
 });
 
-// Funzioni scientifiche
+// Funzioni scientifiche (click)
 sciButtons.forEach(btn => {
     btn.addEventListener("click", () => {
         const func = btn.getAttribute("data-func");
@@ -84,11 +85,11 @@ invertBtn.addEventListener("click", () => {
 // DEG/RAD
 degRadBtn.addEventListener("click", () => {
     isDeg = !isDeg;
-    degRadBtn.textContent = isDeg ? "DEG" : "RAD";
+    modeLabel.textContent = isDeg ? "DEG" : "RAD";
 });
 
 // Calcolo finale
-equalBtn.addEventListener("click", () => {
+function calculate() {
     try {
         let expr = display.value;
 
@@ -104,5 +105,63 @@ equalBtn.addEventListener("click", () => {
         display.value = result;
     } catch {
         display.value = "Errore";
+    }
+}
+
+equalBtn.addEventListener("click", calculate);
+
+// COMANDI DA TASTIERA
+document.addEventListener("keydown", (e) => {
+    const key = e.key;
+
+    // Numeri
+    if (/[0-9]/.test(key)) {
+        display.value += key;
+        return;
+    }
+
+    // Operatori base
+    if (["+", "-", "*", "/"].includes(key)) {
+        display.value += key;
+        return;
+    }
+
+    // Punto decimale
+    if (key === ".") {
+        display.value += ".";
+        return;
+    }
+
+    // Parentesi
+    if (key === "(" || key === ")") {
+        display.value += key;
+        return;
+    }
+
+    // Percentuale
+    if (key === "%") {
+        if (display.value) {
+            display.value = String(parseFloat(display.value) / 100);
+        }
+        return;
+    }
+
+    // Invio = uguale
+    if (key === "Enter") {
+        e.preventDefault();
+        calculate();
+        return;
+    }
+
+    // Backspace
+    if (key === "Backspace") {
+        display.value = display.value.slice(0, -1);
+        return;
+    }
+
+    // Canc (Delete) = clear
+    if (key === "Delete") {
+        display.value = "";
+        return;
     }
 });
