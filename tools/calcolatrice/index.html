@@ -11,11 +11,16 @@
 
 <header class="header">
     <h1>Calcolatrice Scientifica</h1>
-    <p>Funzioni avanzate, design professionale.</p>
+    <p>Funzioni avanzate, grafica realistica, comandi da tastiera.</p>
 </header>
 
-<main class="calculator-container">
+<main class="calculator-wrapper">
     <div class="calculator">
+
+        <div class="top-bar">
+            <span class="brand">StrumentiPronti</span>
+            <span class="mode" id="modeLabel">DEG</span>
+        </div>
 
         <input type="text" id="display" disabled>
 
@@ -26,18 +31,21 @@
             <button class="btn sci" data-func="cos">cos</button>
             <button class="btn sci" data-func="tan">tan</button>
             <button class="btn sci" data-func="sqrt">√</button>
+
             <button class="btn sci" data-func="square">x²</button>
             <button class="btn sci" data-func="cube">x³</button>
             <button class="btn sci" data-func="log">log</button>
             <button class="btn sci" data-func="ln">ln</button>
+
             <button class="btn sci" data-func="pi">π</button>
             <button class="btn sci" data-func="e">e</button>
-            <button class="btn sci" id="degRad">DEG</button>
-
+            <button class="btn function" id="degRad">DEG/RAD</button>
             <button class="btn function" id="clear">C</button>
+
             <button class="btn function" id="backspace">←</button>
             <button class="btn function" data-value="(">(</button>
             <button class="btn function" data-value=")">)</button>
+            <button class="btn function" id="percent">%</button>
 
         </div>
 
@@ -61,10 +69,9 @@
 
             <button class="btn" data-value="0">0</button>
             <button class="btn" data-value=".">.</button>
-            <button class="btn function" id="percent">%</button>
+            <button class="btn function" id="invert">±</button>
             <button class="btn operator" data-value="+">+</button>
 
-            <button class="btn function" id="invert">±</button>
             <button class="btn equal" id="equal">=</button>
 
         </div>
@@ -73,6 +80,7 @@
 
 <footer class="footer">
     <a href="../../index.html">← Torna alla homepage</a>
+    <p class="hint">Suggerimento: puoi usare anche la tastiera (numeri, +, -, *, /, Enter, Backspace, Canc, %, parentesi).</p>
 </footer>
 
 <script src="script.js"></script>
