@@ -84,3 +84,18 @@ body {
   80% { transform: rotate(-15deg) scale(1.05); }
   100% { transform: rotate(0deg) scale(1); }
 }
+/* Animazione realistica del dado */
+.rolling {
+  animation: realisticRoll 0.9s cubic-bezier(.26,.53,.74,1.48);
+}
+
+@keyframes realisticRoll {
+  0%   { transform: rotate(0deg) scale(1); }
+  10%  { transform: rotate(90deg) scale(1.15); }
+  25%  { transform: rotate(180deg) scale(1.05); }
+  40%  { transform: rotate(270deg) scale(1.18); }
+  55%  { transform: rotate(360deg) scale(1.1); }
+  70%  { transform: rotate(450deg) scale(1.03); }
+  85%  { transform: rotate(540deg) scale(1.08); }
+  100% { transform: rotate(630deg) scale(1); }
+}
