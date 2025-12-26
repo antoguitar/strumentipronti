@@ -18,16 +18,26 @@
 
     <div id="coin" class="coin">
 
-      <!-- FRONTE — MONETA PREMIUM REALISTICA -->
+      <!-- FRONTE — MONETA D’ORO REALISTICA -->
       <svg id="coin-front" class="face front" width="140" height="140" viewBox="0 0 140 140">
         <defs>
 
-          <!-- Oro multilivello -->
+          <!-- Oro multilivello realistico -->
           <radialGradient id="goldFront" cx="35%" cy="25%" r="80%">
             <stop offset="0%" stop-color="#fffdf5"/>
-            <stop offset="30%" stop-color="#f7e4a8"/>
-            <stop offset="65%" stop-color="#d4a84c"/>
+            <stop offset="25%" stop-color="#f7e9b0"/>
+            <stop offset="55%" stop-color="#e0b95a"/>
+            <stop offset="85%" stop-color="#b98a32"/>
             <stop offset="100%" stop-color="#8b6425"/>
+          </radialGradient>
+
+          <!-- Texture radiale spazzolata -->
+          <radialGradient id="brushedFront" cx="50%" cy="50%" r="80%">
+            <stop offset="0%" stop-color="rgba(255,255,255,0.25)"/>
+            <stop offset="20%" stop-color="rgba(255,255,255,0.05)"/>
+            <stop offset="40%" stop-color="rgba(0,0,0,0.05)"/>
+            <stop offset="60%" stop-color="rgba(255,255,255,0.05)"/>
+            <stop offset="100%" stop-color="rgba(0,0,0,0.15)"/>
           </radialGradient>
 
           <!-- Ombra interna -->
@@ -36,7 +46,7 @@
             <stop offset="100%" stop-color="rgba(0,0,0,0.35)"/>
           </radialGradient>
 
-          <!-- Highlight -->
+          <!-- Highlight speculare -->
           <radialGradient id="highlightFront" cx="40%" cy="30%" r="50%">
             <stop offset="0%" stop-color="rgba(255,255,255,0.9)"/>
             <stop offset="40%" stop-color="rgba(255,255,255,0)"/>
@@ -46,6 +56,9 @@
 
         <!-- Corpo -->
         <circle cx="70" cy="70" r="60" fill="url(#goldFront)" stroke="#6f4c18" stroke-width="3"/>
+
+        <!-- Texture metallica -->
+        <circle cx="70" cy="70" r="60" fill="url(#brushedFront)" opacity="0.35"/>
 
         <!-- Anello inciso -->
         <circle cx="70" cy="70" r="52"
@@ -59,12 +72,12 @@
         <!-- Highlight -->
         <circle cx="60" cy="55" r="26" fill="url(#highlightFront)"/>
 
-        <!-- Rilievo centrale geometrico -->
+        <!-- Rilievo centrale geometrico premium -->
         <path d="
           M70 45
-          L90 70
+          L92 70
           L70 95
-          L50 70
+          L48 70
           Z"
           fill="rgba(0,0,0,0.45)"/>
 
@@ -82,9 +95,18 @@
 
           <radialGradient id="goldBack" cx="35%" cy="25%" r="80%">
             <stop offset="0%" stop-color="#fffdf5"/>
-            <stop offset="30%" stop-color="#f7e4a8"/>
-            <stop offset="65%" stop-color="#d4a84c"/>
+            <stop offset="25%" stop-color="#f7e9b0"/>
+            <stop offset="55%" stop-color="#e0b95a"/>
+            <stop offset="85%" stop-color="#b98a32"/>
             <stop offset="100%" stop-color="#8b6425"/>
+          </radialGradient>
+
+          <radialGradient id="brushedBack" cx="50%" cy="50%" r="80%">
+            <stop offset="0%" stop-color="rgba(255,255,255,0.25)"/>
+            <stop offset="20%" stop-color="rgba(255,255,255,0.05)"/>
+            <stop offset="40%" stop-color="rgba(0,0,0,0.05)"/>
+            <stop offset="60%" stop-color="rgba(255,255,255,0.05)"/>
+            <stop offset="100%" stop-color="rgba(0,0,0,0.15)"/>
           </radialGradient>
 
           <radialGradient id="innerShadowBack" cx="50%" cy="55%" r="80%">
@@ -101,6 +123,9 @@
 
         <!-- Corpo -->
         <circle cx="70" cy="70" r="60" fill="url(#goldBack)" stroke="#6f4c18" stroke-width="3"/>
+
+        <!-- Texture metallica -->
+        <circle cx="70" cy="70" r="60" fill="url(#brushedBack)" opacity="0.35"/>
 
         <!-- Anello inciso -->
         <circle cx="70" cy="70" r="52"
