@@ -16,67 +16,92 @@
 <main class="main">
   <div class="coin-box">
 
-    <!-- MONETA -->
     <div id="coin" class="coin">
 
-      <!-- FRONTE (F2 – Testa dettagliata) -->
+      <!-- FRONTE — TESTA REALISTICA PREMIUM -->
       <svg id="coin-front" class="face front" width="140" height="140" viewBox="0 0 140 140">
         <defs>
-          <radialGradient id="goldFront" cx="50%" cy="50%" r="60%">
-            <stop offset="0%" stop-color="#fff7c2"/>
-            <stop offset="40%" stop-color="#f2d675"/>
-            <stop offset="100%" stop-color="#c9a33a"/>
+
+          <!-- Oro premium multilivello -->
+          <radialGradient id="goldFront" cx="50%" cy="50%" r="65%">
+            <stop offset="0%" stop-color="#fff9d9"/>
+            <stop offset="35%" stop-color="#f4d98a"/>
+            <stop offset="70%" stop-color="#d1a84a"/>
+            <stop offset="100%" stop-color="#b3872f"/>
           </radialGradient>
 
-          <radialGradient id="innerShadowFront" cx="50%" cy="50%" r="70%">
+          <!-- Ombra interna morbida -->
+          <radialGradient id="innerShadowFront" cx="50%" cy="50%" r="75%">
             <stop offset="60%" stop-color="rgba(0,0,0,0)"/>
-            <stop offset="100%" stop-color="rgba(0,0,0,0.25)"/>
+            <stop offset="100%" stop-color="rgba(0,0,0,0.28)"/>
           </radialGradient>
+
         </defs>
 
+        <!-- Corpo moneta -->
         <circle cx="70" cy="70" r="60" fill="url(#goldFront)" stroke="#8a6b1f" stroke-width="4"/>
         <circle cx="70" cy="70" r="58" fill="url(#innerShadowFront)"/>
 
-        <!-- Testa dettagliata -->
+        <!-- Bordo inciso premium -->
+        <circle cx="70" cy="70" r="60"
+          stroke="rgba(255,255,255,0.25)"
+          stroke-width="1"
+          stroke-dasharray="2 4"
+          fill="none"/>
+
+        <!-- Testa realistica premium -->
         <path d="
-          M70 38
-          C58 38 48 50 48 65
-          C48 78 55 88 65 92
-          C66 96 66 100 63 104
-          C70 103 76 98 78 92
+          M70 35
+          C55 35 45 50 45 65
+          C45 78 52 88 62 92
+          C63 96 63 102 60 108
+          C68 106 75 100 78 92
           C90 88 97 78 97 65
-          C97 50 82 38 70 38
+          C97 50 85 35 70 35
           Z"
-          fill="rgba(0,0,0,0.28)"/>
+          fill="rgba(0,0,0,0.32)"/>
       </svg>
 
-      <!-- RETRO (R2 – Corona completa) -->
+      <!-- RETRO — CORONA PREMIUM COMPLETA -->
       <svg id="coin-back" class="face back" width="140" height="140" viewBox="0 0 140 140">
         <defs>
-          <radialGradient id="goldBack" cx="50%" cy="50%" r="60%">
-            <stop offset="0%" stop-color="#fff7c2"/>
-            <stop offset="40%" stop-color="#f2d675"/>
-            <stop offset="100%" stop-color="#c9a33a"/>
+
+          <!-- Oro premium multilivello -->
+          <radialGradient id="goldBack" cx="50%" cy="50%" r="65%">
+            <stop offset="0%" stop-color="#fff9d9"/>
+            <stop offset="35%" stop-color="#f4d98a"/>
+            <stop offset="70%" stop-color="#d1a84a"/>
+            <stop offset="100%" stop-color="#b3872f"/>
           </radialGradient>
 
-          <radialGradient id="innerShadowBack" cx="50%" cy="50%" r="70%">
+          <!-- Ombra interna morbida -->
+          <radialGradient id="innerShadowBack" cx="50%" cy="50%" r="75%">
             <stop offset="60%" stop-color="rgba(0,0,0,0)"/>
-            <stop offset="100%" stop-color="rgba(0,0,0,0.25)"/>
+            <stop offset="100%" stop-color="rgba(0,0,0,0.28)"/>
           </radialGradient>
+
         </defs>
 
+        <!-- Corpo moneta -->
         <circle cx="70" cy="70" r="60" fill="url(#goldBack)" stroke="#8a6b1f" stroke-width="4"/>
         <circle cx="70" cy="70" r="58" fill="url(#innerShadowBack)"/>
 
-        <!-- Corona d’alloro completa -->
+        <!-- Bordo inciso premium -->
+        <circle cx="70" cy="70" r="60"
+          stroke="rgba(255,255,255,0.25)"
+          stroke-width="1"
+          stroke-dasharray="2 4"
+          fill="none"/>
+
+        <!-- Corona d’alloro premium -->
         <path d="
-          M70 40
-          C55 45 45 60 45 75
-          C45 90 55 105 70 110
-          C85 105 95 90 95 75
-          C95 60 85 45 70 40
+          M70 38
+          C52 45 40 60 40 75
+          C40 90 52 105 70 112
+          C88 105 100 90 100 75
+          C100 60 88 45 70 38
           Z"
-          stroke="rgba(0,0,0,0.32)"
+          stroke="rgba(0,0,0,0.35)"
           stroke-width="5"
           fill="none"
           stroke-linecap="round"
@@ -98,3 +123,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
