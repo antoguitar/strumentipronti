@@ -1,34 +1,108 @@
-const flipBtn = document.getElementById("flipBtn");
-const coin = document.getElementById("coin");
-const front = document.getElementById("coin-front");
-const back = document.getElementById("coin-back");
-const result = document.getElementById("result");
-
-function flipCoin() {
-  // Evita doppi click durante l’animazione
-  if (coin.classList.contains("flipping")) return;
-
-  coin.classList.add("flipping");
-
-  const isTesta = Math.random() < 0.5;
-
-  // Cambio faccia a metà animazione (sincronizzato col flip)
-  setTimeout(() => {
-    if (isTesta) {
-      front.style.transform = "rotateY(0deg)";
-      back.style.transform = "rotateY(180deg)";
-      result.textContent = "È uscito: Testa";
-    } else {
-      front.style.transform = "rotateY(180deg)";
-      back.style.transform = "rotateY(0deg)";
-      result.textContent = "È uscito: Croce";
-    }
-  }, 600);
-
-  // Fine animazione
-  setTimeout(() => {
-    coin.classList.remove("flipping");
-  }, 1200);
+/* Layout generale */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #d7d9df, #bfc3cc);
+  margin: 0;
+  padding: 0;
+  color: #222;
+  text-align: center;
 }
 
-flipBtn.addEventListener("click", flipCoin);
+.header {
+  padding: 20px 10px 10px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  padding: 30px 10px;
+}
+
+.coin-box {
+  background: #f7f8fa;
+  padding: 30px 20px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 320px;
+  width: 100%;
+  border: 1px solid #dcdfe3;
+
+  /* LA PROSPETTIVA DEVE STARE QUI */
+  perspective: 900px;
+}
+
+/* MONETA REALISTICA */
+.coin {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 20px;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  transform-origin: center center;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+/* Animazione */
+.flipping {
+  animation: flipGold 1.2s cubic-bezier(.25,.6,.35,1.4);
+}
+
+@keyframes flipGold {
+  0%   { transform: rotateY(0deg) scale(1); }
+  25%  { transform: rotateY(180deg) scale(1.08); }
+  50%  { transform: rotateY(360deg) scale(1.02); }
+  75%  { transform: rotateY(540deg) scale(1.06); }
+  100% { transform: rotateY(720deg) scale(1); }
+}
+
+.result {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #2ed573;
+  color: #1b1b1b;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #3ae27f;
+}
+
+.footer {
+  margin-top: 30px;
+  font-size: 0.85rem;
+  padding-bottom: 20px;
+}
+
+.footer a {
+  color: #222;
+  text-decoration: none;
+}
