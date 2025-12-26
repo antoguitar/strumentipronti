@@ -5,14 +5,13 @@ const back = document.getElementById("coin-back");
 const result = document.getElementById("result");
 
 function flipCoin() {
-  // Evita doppi click durante l’animazione
   if (coin.classList.contains("flipping")) return;
 
   coin.classList.add("flipping");
 
   const isTesta = Math.random() < 0.5;
 
-  // Cambio faccia a metà animazione (sincronizzato col flip)
+  // Cambio faccia a metà animazione
   setTimeout(() => {
     if (isTesta) {
       front.style.transform = "rotateY(0deg)";
