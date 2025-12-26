@@ -1,4 +1,3 @@
-/* Layout generale */
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #d7d9df, #bfc3cc);
@@ -38,12 +37,9 @@ body {
   max-width: 320px;
   width: 100%;
   border: 1px solid #dcdfe3;
-
-  /* LA PROSPETTIVA DEVE STARE QUI */
   perspective: 900px;
 }
 
-/* MONETA REALISTICA */
 .coin {
   width: 140px;
   height: 140px;
@@ -64,7 +60,6 @@ body {
   transform: rotateY(180deg);
 }
 
-/* Animazione */
 .flipping {
   animation: flipGold 1.2s cubic-bezier(.25,.6,.35,1.4);
 }
